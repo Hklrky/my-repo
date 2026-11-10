@@ -54,7 +54,7 @@ body {
  .btn-simpel .hand {
   position: absolute;
   top: -35px;
-  left: 50px;
+  left: 50%;
   opacity: 0;
   transform: translateX(-50%) scale(0);
   transition: opacity 0.2s, transform 0.2s;
