@@ -1,17 +1,210 @@
 <!DOCTYPE html>
-<html>
-  <head>
-  <title>Profile saya</title>
-    <link rel="stylesheet" href="style.css">
-  </head>
-  <body>
-    <div class="kartu-profile">
-    <img src="i.png"alt="foto saya">
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Profile Saya - Haikal Risky Aditya</title>
+  <style>
+    /* Reset & Base Styling */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background: linear-gradient(135deg, #000040 0%, #000080 50%, #0000d1 100%);
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      color: #ffffff;
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 20px;
+    }
+
+    /* Kartu Profile Modern & Simpel */
+    .kartu-profile {
+      width: 100%;
+      max-width: 380px;
+      padding: 30px 25px;
+      background: rgba(255, 255, 255, 0.07);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      border-radius: 20px;
+      box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4);
+      text-align: center;
+      transition: transform 0.3s ease;
+    }
+
+    .kartu-profile:hover {
+      transform: translateY(-5px);
+    }
+
+    /* Foto Profile dengan Ring Glow */
+    .kartu-profile img {
+      width: 120px;
+      height: 120px;
+      object-fit: cover;
+      border-radius: 50%;
+      border: 3px solid rgba(255, 255, 255, 0.8);
+      box-shadow: 0 0 20px rgba(0, 0, 255, 0.5);
+      margin-bottom: 15px;
+    }
+
+    /* Judul & Deskripsi */
+    .kartu-profile h1 {
+      font-size: 22px;
+      font-weight: 700;
+      margin-bottom: 8px;
+      color: #ffffff;
+    }
+
+    .kartu-profile p {
+      font-size: 13.5px;
+      line-height: 1.5;
+      color: #d1d5db;
+      margin-bottom: 25px;
+    }
+
+    /* Skill Badges Simpel */
+    .skill-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 6px;
+      margin-bottom: 25px;
+    }
+
+    .skill-badge {
+      background: rgba(255, 255, 255, 0.12);
+      padding: 4px 10px;
+      border-radius: 12px;
+      font-size: 11px;
+      font-weight: 600;
+      color: #93c5fd;
+      border: 1px solid rgba(147, 197, 253, 0.3);
+    }
+
+    /* Container Tombol Links */
+    .link-group {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    /* Styling Link Instagram (Menggunakan class .tiktok asli kamu) */
+    .tiktok {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      padding: 12px;
+      background-color: #0000FF;
+      color: #ffffff;
+      text-decoration: none;
+      border-radius: 10px;
+      font-family: 'Segoe UI', sans-serif;
+      font-weight: 600;
+      font-size: 15px;
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 12px rgba(0, 0, 255, 0.3);
+    }
+
+    .tiktok:hover {
+      background-color: #0056b3;
+      color: #ffffff;
+      transform: translateY(-2px);
+      box-shadow: 0 6px 16px rgba(0, 0, 255, 0.5);
+    }
+
+    /* Styling Tombol Sapa (Class .btn-simpel asli kamu) */
+    .btn-simpel {
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      font-size: 15px;
+      font-weight: 600;
+      padding: 12px;
+      width: 100%;
+      cursor: pointer;
+      background: rgba(255, 255, 255, 0.1);
+      color: #ffffff;
+      border-radius: 10px;
+      transition: all 0.2s ease-in-out;
+    }
+
+    .btn-simpel:hover {
+      background: rgba(255, 255, 255, 0.25);
+      transform: translateY(-2px);
+    }
+
+    .btn-simpel:active {
+      transform: translateY(0);
+    }
+
+    /* Custom Notification Toast */
+    .toast {
+      position: fixed;
+      bottom: -60px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: #0000FF;
+      color: white;
+      padding: 12px 24px;
+      border-radius: 30px;
+      font-weight: 600;
+      font-size: 14px;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+      transition: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+      opacity: 0;
+      z-index: 1000;
+    }
+
+    .toast.show {
+      bottom: 30px;
+      opacity: 1;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="kartu-profile">
+    <img src="i.png" alt="foto saya">
     <h1>Haikal Risky Aditya</h1>
-    <p>Saya seorang murid smk yg tertarik terhadap coding seperti HTML, CSS, JAVASCRIPT dan PYTHON, saya memiliki sedikit pengalaman soal coding dalam hal website dan bot</p>
-    <a href="https://instagram.com/haiklrky" class="tiktok">Instagram Saya</a>
-      <button class="btn-simpel" id="sapaButton">Sapa saya</button>
-      </div>
-    <script src="script.js"></script>
-  </body>
+    
+    <div class="skill-container">
+      <span class="skill-badge">HTML</span>
+      <span class="skill-badge">CSS</span>
+      <span class="skill-badge">JavaScript</span>
+      <span class="skill-badge">Python</span>
+      <span class="skill-badge">Bot Dev</span>
+    </div>
+
+    <p>Saya seorang murid SMK yang tertarik terhadap coding seperti HTML, CSS, JAVASCRIPT dan PYTHON. Saya memiliki sedikit pengalaman soal coding dalam hal website dan bot.</p>
+    
+    <div class="link-group">
+      <a href="https://instagram.com/haiklrky" target="_blank" class="tiktok">Instagram Saya</a>
+      <button class="btn-simpel" id="sapaButton">Sapa Saya 👋</button>
+    </div>
+  </div>
+
+  <div id="toastNotification" class="toast">Hai, Terimakasih sudah berkunjung!🏼</div>
+
+  <script>
+    // JS Bawaan Kamu + Toast Popup Modern
+    const tombolSapa = document.getElementById('sapaButton');
+    const toast = document.getElementById('toastNotification');
+
+    tombolSapa.addEventListener('click', function() {
+      // Menampilkan Toast Notifikasi (pengganti alert bawaan)
+      toast.classList.add('show');
+      
+      // Sembunyikan otomatis dalam 3 detik
+      setTimeout(function() {
+        toast.classList.remove('show');
+      }, 3000);
+    });
+  </script>
+</body>
 </html>
