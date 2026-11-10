@@ -63,7 +63,7 @@
 
  .btn-simpel:active .hand {
   opacity: 1;
-  animation: wavw 0.5s infinite ease-in-out alternate;
+  animation: wave 0.5s infinite ease-in-out alternate;
  }
 
  @keyframes wave {
