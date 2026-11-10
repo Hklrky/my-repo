@@ -1,3 +1,8 @@
+.body {
+ background-color: #000080;
+ font-family: Arial, sans-serif;
+ color: #ffffff;
+
 .btn-simpel {
  border: none;
  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
